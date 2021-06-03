@@ -33,13 +33,12 @@ public class TestBase {
             Configuration.browserCapabilities = capabilities;
 
             Configuration.remote = config.getWebDriverURL();
-
-
-            RestAssured.filters(customLogFilter().withCustomTemplates());
-            RestAssured.baseURI = "http://demowebshop.tricentis.com";
-            Configuration.baseUrl = "http://demowebshop.tricentis.com";
         }
+        RestAssured.filters(customLogFilter().withCustomTemplates());
+        RestAssured.baseURI = "http://demowebshop.tricentis.com";
+        Configuration.baseUrl = "http://demowebshop.tricentis.com";
     }
+
 
     @AfterEach
     public void afterEach() {
